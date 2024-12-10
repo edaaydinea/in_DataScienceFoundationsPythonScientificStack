@@ -1,4 +1,5 @@
 # %%
+%pip install shapely -q
 from shapely.geometry import Point
 
 pt = Point(1, 2)
@@ -105,3 +106,4 @@ def add_marker(row):
 
 df.apply(add_marker, axis=1)
 m
+# %%
