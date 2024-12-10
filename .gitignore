@@ -5,3 +5,4 @@ node_modules
 npm-debug.log
 taxi.csv
 taxi.parquet
+/.vscode
