@@ -12,7 +12,7 @@ df.columns
 df.index[:5]
 
 # %%
-import folium
+import folium # folium is a geospatial data visualization library
 
 center = [df['lat'].mean(), df['lng'].mean()]
 m = folium.Map(
@@ -23,3 +23,4 @@ m
 
 # %%
 m.save('track.html')
+# %%
