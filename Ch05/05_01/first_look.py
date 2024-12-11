@@ -1,7 +1,7 @@
 # %%
 from pathlib import Path
 
-csv_file = Path('taxi.csv')
+csv_file = Path('../data/taxi.csv')
 mb = 2**20
 csv_file.stat().st_size / mb
 
