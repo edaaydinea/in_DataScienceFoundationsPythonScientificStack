@@ -6,7 +6,7 @@ time_cols = [
     'tpep_dropoff_datetime',
 ]
 df = pd.read_csv(
-    'taxi.csv',
+    '../data/taxi.csv',
     parse_dates=time_cols,
 )
 df.dtypes
@@ -42,3 +42,4 @@ df['Vendor'].head().cat.codes
 
 # %%
 len(df[df['Vendor'] == 'VeriFone'])
+# %%

@@ -6,7 +6,7 @@ time_cols = [
     'tpep_dropoff_datetime',
 ]
 df = pd.read_csv(
-    'taxi.csv',
+    '../data/taxi.csv',
     parse_dates=time_cols,
 )
 vendors = {
@@ -18,7 +18,7 @@ df['Vendor'] = \
 
 # %%
 wdf = pd.read_csv(
-    'weather.csv',
+    '../data/weather.csv',
     parse_dates=['DATE'],
     index_col='DATE'
 )
@@ -51,3 +51,4 @@ jdf.head()
 
 # %%
 jdf.plot.scatter(x='tempF', y='Vendor');
+# %%

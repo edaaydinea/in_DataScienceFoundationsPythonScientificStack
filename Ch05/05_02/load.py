@@ -1,7 +1,7 @@
 # %%
 import pandas as pd
 
-csv_file = 'taxi.csv'
+csv_file = '../data/taxi.csv'
 df = pd.read_csv(csv_file)
 print(f'{len(df):,}')
 
@@ -21,3 +21,4 @@ df = pd.read_csv(
     parse_dates=time_cols,
 )
 df.dtypes
+# %%

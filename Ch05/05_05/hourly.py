@@ -6,15 +6,14 @@ time_cols = [
     'tpep_dropoff_datetime',
 ]
 df = pd.read_csv(
-    'taxi.csv',
+    '../data/taxi.csv',
     parse_dates=time_cols,
 )
 vendors = {
     1: 'Creative',
     2: 'VeriFone',
 }
-df['Vendor'] = \
-    df['VendorID'].map(vendors).astype('category')
+df['Vendor'] = df['VendorID'].map(vendors).astype('category')
 
 # %%
 df['hour'] = \
@@ -24,28 +23,13 @@ df['day'] = \
 df[['day', 'hour']].head()
 
 # %%
-(
-    df.groupby(['Vendor', 'day', 'hour'])
-    .count()
-    ['Vendor']
-)
+df.groupby(['Vendor', 'day', 'hour']).count()['Vendor']
 
 # %%
-(
-    df.groupby(['Vendor', 'day', 'hour'])
-    .count()
-    .index
-)
+df.groupby(['Vendor', 'day', 'hour']).count().index
 
 # %%
-(
-    df.groupby(
-        ['Vendor', 'day', 'hour'],
-        as_index=False
-    )
-    .count()
-    .columns
-)
+df.groupby(['Vendor', 'day', 'hour'],as_index=False).count().columns
 
 # %%
 daily_df = (
@@ -67,3 +51,4 @@ hourly_df.pivot(
     index='hour',
     values='VendorID'
 ).plot.bar(rot=0)
+# %%
